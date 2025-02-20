@@ -80,3 +80,34 @@ button {
     width: 30%;
     /* gap: 3vh; */
 }
+.editModal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+.editModal div {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: start;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    width: 30%;
+    /* gap: 3vh; */
+}
+.editModal input {
+    margin: 2vh;
+    padding: 1vh;
+    border: none;
+    border-radius: 5px;
+    width: 80%;
+}

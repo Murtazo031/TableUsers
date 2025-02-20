@@ -143,15 +143,19 @@ export default function TableUser() {
           {users.map((user) => (
             <tr key={user.id}>
               <td>
-                <img style={{
-                  width: "50px",
-                  height: "50px",
-                  borderRadius: "50%",
-                  objectFit: "cover",
-                  cursor: "pointer",
-                  background: "lightgray",
-                  border: "1px solid #ccc",
-                }} src={user.avatar} alt={user.name} />
+                <img
+                  style={{
+                    width: "50px",
+                    height: "50px",
+                    borderRadius: "50%",
+                    objectFit: "cover",
+                    cursor: "pointer",
+                    background: "lightgray",
+                    border: "1px solid #ccc",
+                  }}
+                  src={user.avatar}
+                  alt={user.name}
+                />
               </td>
               <td>{user.name}</td>
               <td>{user.email}</td>
@@ -181,29 +185,67 @@ export default function TableUser() {
 
       {/*EDIT*/}
       {editModal && (
-        <div className="editMaodal">
-          <input
-            type="text"
-            value={editName}
-            onChange={(e) => setEditName(e.target.value)}
-          />
-          <input
-            type="text"
-            value={editEmail}
-            onChange={(e) => setEditEmail(e.target.value)}
-          />
-          <input
-            type="text"
-            value={editCity}
-            onChange={(e) => setEditCity(e.target.value)}
-          />
-          <input
-            type="text"
-            value={editPhone}
-            onChange={(e) => setEditPhone(e.target.value)}
-          />
-          <button onClick={() => updateUser(editId)}>Save</button>
-          <button onClick={() => setEditModal(false)}>Cancel</button>
+        <div className="editModal">
+          <div>
+            <input
+              type="text"
+              value={editName}
+              onChange={(e) => setEditName(e.target.value)}
+            />
+            <input
+              type="text"
+              value={editEmail}
+              onChange={(e) => setEditEmail(e.target.value)}
+            />
+            <input
+              type="text"
+              value={editCity}
+              onChange={(e) => setEditCity(e.target.value)}
+            />
+            <input
+              type="text"
+              value={editPhone}
+              onChange={(e) => setEditPhone(e.target.value)}
+            />
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "flex-start",
+                marginTop: "20px",
+                width: "90%",
+              }}
+            >
+              <button
+                style={{
+                  backgroundColor: "#2196F3",
+                  color: "white",
+                  border: "none",
+                  // padding: "10px 20px",
+                  borderRadius: "5px",
+                  cursor: "pointer",
+                  fontSize: "22px",
+                }}
+                onClick={() => updateUser(editId)}
+              >
+                Save
+              </button>
+              <button
+                style={{
+                  backgroundColor: "transparent",
+                  color: "#2196F3",
+                  border: "1px solid #2196F3",
+                  // padding: "10px 20px",
+                  borderRadius: "5px",
+                  cursor: "pointer",
+                  fontSize: "22px",
+                }}
+                onClick={() => setEditModal(false)}
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
         </div>
       )}
       {/*INFO*/}
